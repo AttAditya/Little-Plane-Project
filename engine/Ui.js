@@ -58,9 +58,9 @@ class UiController {
     UiController.setDisplay("toggle", $nav);
 
     if ($nav.style.display === "block")
-      $hamburger.style.backgroundImage = "url('css/close.png')";
+      $hamburger.style.backgroundImage = "url('assets/close.png')";
     else {
-      $hamburger.style.backgroundImage = "url('css/hamburger.png')";
+      $hamburger.style.backgroundImage = "url('assets/menu.png')";
       UiController.setDisplay("none", $ui, $customizeMenu, $settingsMenu);
     }
   }
@@ -84,6 +84,7 @@ class UiController {
         UiController.setDisplay("none", $welcome, $ui);
         constantFlight = true;
         pause = false;
+        $root.classList.add("play-mode");
     });
     $planeColors.forEach((input) => {
       input.addEventListener("change", this.updatePlaneColor);

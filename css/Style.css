@@ -1,21 +1,42 @@
+@import "./menu.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
+  width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
+
 #canvas-container {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
+
 #canvas {
-  width: max(1600px, 100%);
-  height: max(800px, 100%);
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 0;
 }
+
 #planeCanvas {
   width: clamp(37.5rem, 28.846rem + 46.154vw, 75rem);
   height: clamp(18.75rem, 14.423rem + 23.077vw, 37.5rem);
@@ -34,6 +55,7 @@ body {
   justify-content: center;
   align-items: end;
 }
+
 #speedometerCanvas {
   width: 100%;
   height: 100%;
@@ -114,6 +136,7 @@ body {
 }
 
 /* Menu UI */
+
 #menu {
   position: absolute;
   top: 25px;
@@ -122,13 +145,15 @@ body {
   display: flex;
   gap: 10px;
 }
+
 #hamburger {
   width: 50px;
   height: 50px;
-  background: url("hamburger.png") 0 0; /* Set the sprite image */
+  background: url("../assets/menu.png") 0 0; /* Set the sprite image */
   background-size: 50px 50px;
   cursor: pointer;
 }
+
 #nav {
   background: rgba(255, 255, 255, 0.8);
   border: solid #323c39 4px;
@@ -141,18 +166,22 @@ body {
   font-size: 16px;
   user-select: none;
 }
+
 #nav ul {
   list-style: none;
   padding: 0;
 }
+
 #nav li {
   cursor: pointer;
 }
+
 #nav li:hover {
   color: rgb(6, 173, 224);
 }
 
 /* Customisation UI */
+
 #ui {
   position: absolute;
   top: 50%;
@@ -166,24 +195,29 @@ body {
   font-family: boxyFont;
   letter-spacing: 1px;
   z-index: 150;
-  display: block;
+  display: none;
 }
+
 #customizeMenu {
   display: none;
   text-shadow: 1px 1px white;
 }
+
 #welcome {
   display: block;
   text-shadow: 1px 1px white;
   text-align: center;
 }
+
 #settingsMenu {
   display: none;
   text-shadow: 1px 1px white;
 }
+
 #start {
   cursor: pointer;
 }
+
 .planeColors {
   display: flex;
   flex-direction: column;
@@ -193,7 +227,7 @@ body {
 #speakerphone {
   width: 50px;
   height: 50px;
-  background-image: url("speakerphone.png");
+  background-image: url("../assets/sound.png");
   background-size: cover;
   cursor: pointer;
 }
@@ -219,3 +253,4 @@ body {
   font-family: boxyFont;
   src: url("boxyFont.otf") format("opentype");
 }
+

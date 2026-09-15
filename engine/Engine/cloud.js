@@ -26,6 +26,11 @@ function Cloud(
   cloud_canvas.height = CANVAS_DIMENSIONS.height;
   let cloud_ctx = cloud_canvas.getContext("2d");
 
+  CANVAS_DIMENSIONS.updateCallbacks.push((newDimensions) => {
+    cloud_canvas.width = newDimensions.width;
+    cloud_canvas.height = newDimensions.height;
+  });
+
   function calculateCloudDensity(x, y) {
     let camHeight = altitude / ALTIUDE_FACTOR;
     let {

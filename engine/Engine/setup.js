@@ -4,6 +4,32 @@ let rect = $canvas.getBoundingClientRect();
 let width = ($canvas.width = rect.width);
 let height = ($canvas.height = rect.height);
 let ctx = $canvas.getContext("2d");
+let resizeTimeout = null;
+
+new ResizeObserver(() => {
+  resizeTimeout = setTimeout(() => {
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout);
+    }
+
+    const rect = $canvas.getBoundingClientRect();
+    const w = Math.round(rect.width);
+    const h = Math.round(rect.height);
+
+    $canvas.width = w;
+    $canvas.height = h;
+    width = w;
+    height = h;
+    
+    try {
+      CANVAS_DIMENSIONS.width = width;
+      CANVAS_DIMENSIONS.height = height;
+      CANVAS_DIMENSIONS.updateCallbacks.forEach(
+        (callback) => callback({ width, height })
+      )
+    } catch {}
+  }, 10);
+}).observe($canvas);
 
 // altitude of the plane
 let altitudeFromGround = 200;

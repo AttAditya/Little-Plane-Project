@@ -6,7 +6,7 @@ const MAX_ALTITUDE = 1000;
 const DEFAULT_ALTITUDE = 200;
 const CLOUD_HEIGHT = 110; // Clouds start at altitude 210 (200 + 10)
 const CANVAS_DIMENSIONS = {
-  width, height
+  width, height, updateCallbacks: [],
 }
 
 const terrain = Terrain(

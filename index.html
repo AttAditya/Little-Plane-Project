@@ -18,14 +18,85 @@
 </head>
 
 <body>
-    <div id="canvas-container">
-        <canvas id="planeCanvas"></canvas>
-        <div id="instrumentCanvases">
-            <canvas id="instrumentCanvas"></canvas>
+    <div id="root">
+        <div id="canvas-container">
+            <canvas id="planeCanvas"></canvas>
+            <div id="instrumentCanvases">
+                <canvas id="instrumentCanvas"></canvas>
+            </div>
+            <canvas id="canvas"></canvas>
+            <canvas id="timeCycle"></canvas>
         </div>
-        <canvas id="canvas"></canvas>
-        <canvas id="timeCycle"></canvas>
+
+        <div class="home-menu">
+            <div class="title">
+                <span>The</span>
+                <h1>Little Plane</h1>
+                <span>Game</span>
+            </div>
+
+            <div class="actions">
+                <button class="button" id="start">
+                    Play
+                </button>
+
+                <button class="button" onclick="document.getElementById('control-popup').showModal()">
+                    Controls
+                </button>
+
+                <a href="https://github.com/Glowstick0017/Little-Plane-Project/?tab=readme-ov-file#the-little-plane-project" target="_blank" class="button">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <div class="nerd-stats">
+            <label id="coords">X = 0 Y = 0</label>
+            <label id="altitude">Altitude = 0</label>
+        </div>
+
+        <div class="control-hint">
+            <img src="./assets/controls/wasd.png" alt="WASD controls" height="100" id="navigateControls">
+        </div>
+
+        <dialog id="control-popup" class="control-popup">
+            <div class="control-popup-close" onclick="document.getElementById('control-popup').close()">
+                X
+            </div>
+
+            <h1>
+                Controls
+            </h1>
+
+            <div class="control-popup-info">
+                <div>
+                    <img src="./assets/controls/arrows.png" alt="Arrow keys" height="100">
+                </div>
+                <div>
+                    Up and Down to change speed.
+                    <br>
+                    Left and Right to steer.
+                </div>
+
+                <div>
+                    <img src="./assets/controls/wasd.png" alt="WASD controls" height="100">
+                </div>
+                <div>
+                    W and S to change speed.
+                    <br>
+                    A and D to steer.
+                </div>
+
+                <div>
+                    <img src="./assets/controls/enter.png" alt="Enter Key" height="50">
+                </div>
+                <div>
+                    Enter to open the command box.
+                </div>
+            </div>
+        </dialog>
     </div>
+
     <div id="menu">
         <div id="hamburger"></div>
         <div id="speakerphone"></div>
@@ -52,16 +123,16 @@
             <p>Use the arrow keys to navigate the world.</p>
             <p>Up/Down changes your speed.</p>
             <p>Left/Right changes your direction.</p>
-            <img src="./css/arrowKeys.png" alt="Arrow keys" height="100">
+            <img src="./assets/controls/arrows.png" alt="Arrow keys" height="100">
             <p>Use the command box to interact with the world</p>
-            <img src="./css/enter.png" alt="Enter Key" height="80">
+            <img src="./assets/controls/enter.png" alt="Enter Key" height="80">
             <p>Use the menu to change settings and customize your plane</p>
-            <img src="./css/hamburger.png" alt="Hamburger Menu" height="70">
+            <img src="./assets/menu.png" alt="Hamburger Menu" height="70">
             </br>
             </br>
             </br>
             </br>
-            <img src="./css/start.png" alt="Start" id="start" height="100">
+            <img src="./css/start.png" alt="Start" id="old-start" height="100">
             <a href="https://github.com/Glowstick0017/Little-Plane-Project/?tab=readme-ov-file#the-little-plane-project"
             style="color: purple; text-decoration: inherit" target="_blank">
                 <p>Learn more about The Little Plane Project</p>
@@ -156,9 +227,6 @@
 
     <input type="text" id="commandBox" autocomplete="off">
     <textarea id="result" disabled></textarea>
-    <label id="coords">X = 0 Y = 0</label>
-    <label id="altitude">Altitude = 0</label>
-    <img src="./css/WASD.png" alt="WASD controls" id="navigateControls" height="100">
 </body>
 <footer>
     <script src="./engine/TerrainColor.js"></script>

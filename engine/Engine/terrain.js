@@ -21,6 +21,11 @@ function Terrain(
   terrain_canvas.height = CANVAS_DIMENSIONS.height;
   const terrain_ctx = terrain_canvas.getContext("2d");
 
+  CANVAS_DIMENSIONS.updateCallbacks.push((newDimensions) => {
+    terrain_canvas.width = newDimensions.width;
+    terrain_canvas.height = newDimensions.height;
+  });
+
   function refreshCoordinate() {
     const coordFactor = ALTIUDE_FACTOR / (altitude * 10);
 

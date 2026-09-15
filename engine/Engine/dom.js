@@ -1,4 +1,5 @@
 // create all the variables with references to the html elements
+const $root = document.getElementById("root");
 const $canvas = document.getElementById("canvas");
 const $color = document.getElementById("color");
 const $commandBox = document.getElementById("commandBox");
