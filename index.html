@@ -26,6 +26,79 @@
             </div>
             <canvas id="canvas"></canvas>
             <canvas id="timeCycle"></canvas>
+
+            <div class="controls">
+                <div class="controls-grid controls-left">
+                    <button
+                        class="controls-element-1 controls-button"
+                        onmousedown="touchDown('ArrowUp')"
+                        onmouseup="touchUp('ArrowUp')"
+                    >
+                        <img src="./assets/controls/touch/FlyFast.png" alt="Fly Fast">
+                    </button>
+                    
+                    <button class="controls-element-2"></button>
+                    <button class="controls-element-3"></button>
+                    <button class="controls-element-4"></button>
+                    <button class="controls-element-5"></button>
+                    <button class="controls-element-6"></button>
+                    
+                    <button
+                        class="controls-element-7 controls-button"
+                        onmousedown="touchDown('ArrowDown')"
+                        onmouseup="touchUp('ArrowDown')"
+                    >
+                        <img src="./assets/controls/touch/FlySlow.png" alt="Fly Slow">
+                    </button>
+                    
+                    <button class="controls-element-8"></button>
+                    <button class="controls-element-9"></button>
+                </div>
+
+                <div class="controls-grid controls-right">
+                    <button class="controls-element-1"></button>
+                    
+                    <button
+                        class="controls-element-2 controls-button"
+                        onmousedown="touchDown(']')"
+                        onmouseup="touchUp(']')"
+                    >
+                        <img src="./assets/controls/touch/FlyUp.png" alt="Fly Up">
+                    </button>
+                    
+                    <button class="controls-element-3"></button>
+                    
+                    <button
+                        class="controls-element-4 controls-button"
+                        onmousedown="touchDown('ArrowLeft')"
+                        onmouseup="touchUp('ArrowLeft')"
+                    >
+                        <img src="./assets/controls/touch/FlyLeft.png" alt="Fly Left">
+                    </button>
+
+                    <button class="controls-element-5"></button>
+                    
+                    <button
+                        class="controls-element-6 controls-button"
+                        onmousedown="touchDown('ArrowRight')"
+                        onmouseup="touchUp('ArrowRight')"
+                    >
+                        <img src="./assets/controls/touch/FlyRight.png" alt="Fly Right">
+                    </button>
+                    
+                    <button class="controls-element-7"></button>
+                    
+                    <button
+                        class="controls-element-8 controls-button"
+                        onmousedown="touchDown('[')"
+                        onmouseup="touchUp('[')"
+                    >
+                        <img src="./assets/controls/touch/FlyDown.png" alt="Fly Down">
+                    </button>
+                    
+                    <button class="controls-element-9"></button>
+                </div>
+            </div>
         </div>
 
         <div class="home-menu">
@@ -53,10 +126,6 @@
         <div class="nerd-stats">
             <label id="coords">X = 0 Y = 0</label>
             <label id="altitude">Altitude = 0</label>
-        </div>
-
-        <div class="control-hint">
-            <img src="./assets/controls/wasd.png" alt="WASD controls" height="100" id="navigateControls">
         </div>
 
         <dialog id="control-popup" class="control-popup">
@@ -252,7 +321,10 @@
     <script src="./engine/Instruments/BaseInstrument.js"></script>
     <script src="./engine/Instruments/Speedometer.js"></script>
     <script src="./engine/Instruments/Altimeter.js"></script>
-    <script src="./engine/Controls.js"></script>
+    
+    <script src="./engine/Controls/touch.js"></script>
+    <script src="./engine/Controls/index.js"></script>
+    
     <script src="./engine/Ui.js"></script>
 </footer>
 

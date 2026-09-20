@@ -115,6 +115,11 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+#canvas-container::before,
+#canvas-container::after {
+  pointer-events: none;
+}
+
 .play-mode #canvas-container::before,
 .play-mode #canvas-container::after {
   scale: 2;
@@ -122,16 +127,28 @@
 }
 
 :not(.play-mode) #instrumentCanvases,
+:not(.play-mode) .controls,
 :not(.play-mode) .control-hint,
 :not(.play-mode) .nerd-stats {
+  pointer-events: none;
   opacity: 0;
 }
 
 .play-mode #instrumentCanvases,
+.play-mode .controls,
 .play-mode .control-hint,
 .play-mode .nerd-stats {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+}
+
+.play-mode .nerd-stats {
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+.play-mode .controls {
+  pointer-events: auto;
 }
 
 .control-popup {

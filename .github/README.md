@@ -52,8 +52,8 @@ With the addition of the context menu thanks to jackwebdev, detailed instruction
 Upcoming features to be implemented
 - [ ] biomes by using multile perlin planes to simulate different conditions including sea level, temperature, humidity...
 - [X] Instructions in context menu
-- [ ] mobile controls (either joystick or click on displayed WASD)
-- [ ] context menu friendly on mobile  
+- [X] mobile controls (either joystick or click on displayed WASD)
+- [X] context menu friendly on mobile  
 - [X] menu screen or esc menu
 - [X] command to change plane or color of plane
 - [X] user adjusted color values
