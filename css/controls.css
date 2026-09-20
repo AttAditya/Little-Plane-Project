@@ -1,0 +1,98 @@
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 264px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.controls-grid {
+  display: grid;
+  height: 100%;
+  width: 200px;
+  gap: 16px;
+  grid-template-areas:
+    "element-1 element-2 element-3"
+    "element-4 element-5 element-6"
+    "element-7 element-8 element-9";
+}
+
+.controls-grid > * {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.controls-grid > *:not(.controls-button) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.controls-button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 4px solid var(--base-color);
+  corner-shape: notch;
+  box-shadow: 0px 8px var(--base-color);
+  text-decoration: none;
+}
+
+.controls-button:hover {
+  background: #e0e0e0;
+}
+
+.controls-button:active {
+  box-shadow: 0px 4px var(--base-color);
+  transform: translateY(4px);
+}
+
+.controls-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.controls-element-1 {
+  grid-area: element-1;
+}
+
+.controls-element-2 {
+  grid-area: element-2;
+}
+
+.controls-element-3 {
+  grid-area: element-3;
+}
+
+.controls-element-4 {
+  grid-area: element-4;
+}
+
+.controls-element-5 {
+  grid-area: element-5;
+}
+
+.controls-element-6 {
+  grid-area: element-6;
+}
+
+.controls-element-7 {
+  grid-area: element-7;
+}
+
+.controls-element-8 {
+  grid-area: element-8;
+}
+
+.controls-element-9 {
+  grid-area: element-9;
+}
+
