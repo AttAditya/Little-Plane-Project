@@ -6,3 +6,5 @@ function touchUp(key) {
   deregisterKeyPress({ key });
 }
 
+window.oncontextmenu = (e) => e.preventDefault();
+
